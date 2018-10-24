@@ -1,13 +1,15 @@
-import { ADD_NAME } from '../actions/actions';
+import { ADD_PLAYER } from '../actions/actions';
 
 const initialState = {
-    value: 'ABC'
+    players: [],
+    weapons: [],
+    rooms: [],
 };
 
 const rootReducer = (state=initialState, action) => {
     switch (action.type) {
-        case ADD_NAME:
-            return {...state, value: action.payload};
+        case ADD_PLAYER:
+            return {...state, players: [...state.players, action.payload]};
         default:
             return state;
     }

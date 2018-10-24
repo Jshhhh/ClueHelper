@@ -1,19 +1,13 @@
-const ADD_NAME = 'ADD_NAME';
+const ADD_PLAYER = 'ADD_PLAYER';
 
 const addName = name => {
-    return dispatch => {
-        setTimeout(() => dispatch(asyncAddName(name)), 2000);
-    }
-};
-
-const asyncAddName = name => {
     return {
-        type: ADD_NAME,
+        type: ADD_PLAYER,
         payload: name
     }
 }
 
 module.exports = {
-    ADD_NAME,
+    ADD_PLAYER,
     addName
 };
