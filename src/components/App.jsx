@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addName } from '../actions/actions';
+// import { addName, changeName } from '../actions/actions';
+
+import Board from './Board';
+import './App.scss';
 
 const mapStateToProps = state => {
-    return { newValue: state.value }
+    return { 
+        newValue: state.playerName
+    }
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        changeValue: (e) => {
-            dispatch(addName(e.target.value));
-        }
-    }
-}
-
 class App extends Component {
+
     render() {
-       return (
-        <div>
-            <h1>cl-UI</h1>
-            <input onChange={this.props.changeValue} type="text" value={this.props.newValue}/>
-            <h2>{this.props.newValue}</h2>
-        </div>
-       )
+        return (
+            <div>
+                <h1 className="title">ClueHelper</h1>
+                <input onChange={this.props.changeName} type="text" value={this.props.newValue}/>
+                <button onClick={() => this.props.addPlayer(this.props.newValue)}>Add Player</button>
+                <h2>{this.props.newValue}</h2>
+                <Board></Board>
+            </div>
+        )
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
