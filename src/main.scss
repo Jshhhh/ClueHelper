@@ -32,6 +32,9 @@ table {
       &:hover {
           background-color: #ccc;
       }
+      p {
+        margin: 0;
+      }
     }
 
     th.rotate-header {

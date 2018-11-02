@@ -4,7 +4,7 @@ class Cell extends React.Component {
     constructor() {
         super()
         this.state = {
-            options: ['', 'X', 'O'],
+            options: ['',<p style={{color: 'red'}}>X</p>, <p style={{color: 'green'}}>O</p>],
             current: 0,
         }
     }
