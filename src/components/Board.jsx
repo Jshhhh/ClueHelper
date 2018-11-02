@@ -36,11 +36,11 @@ const Board = (props) => {
                     })
                 }
                 {
-                    props.rooms.map(room => {
+                    props.rooms.map((room, index) => {
                         return (
                             <tr key={room + 'Col'}>
                                 <th className='row-header'>{room}</th>
-                                {props.weapons.map(e => <td key={e + 'row2'} ></td>)}
+                                {props.weapons.map((w,i) => <td key={index + i + 'row2'} ></td>)}
                             </tr>
                         );
                     })
