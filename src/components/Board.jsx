@@ -25,12 +25,12 @@ const Board = (props) => {
             </thead>
             <tbody>
                 {
-                    props.players.map(player=> {
+                    props.players.map((player, index) => {
                         return (
                             <tr key={player}>
                                 <th className='row-header'>{player}</th>
-                                {props.weapons.map((e, i) => <td key={e + i}></td>)}
-                                {props.rooms.map((e, i) => <td key={e + i}></td>)}
+                                {props.weapons.map((e, i) => <td key={`${index}${i}`} ></td>)}
+                                {props.rooms.map((e, i) => <td key={`${index}${i}`} ></td>)}
                             </tr>
                         );
                     })
@@ -40,7 +40,7 @@ const Board = (props) => {
                         return (
                             <tr key={room + 'Col'}>
                                 <th className='row-header'>{room}</th>
-                                {props.weapons.map(e => <td key={e + 'row2'}></td>)}
+                                {props.weapons.map(e => <td key={e + 'row2'} ></td>)}
                             </tr>
                         );
                     })
