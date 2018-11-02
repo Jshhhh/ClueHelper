@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Cell from './Cell';
 
 const mapStateToProps = (state) => {
     return {
@@ -29,18 +30,8 @@ const Board = (props) => {
                         return (
                             <tr key={player}>
                                 <th className='row-header'>{player}</th>
-                                {props.weapons.map((e, i) => <td key={`${index}${i}`} ></td>)}
-                                {props.rooms.map((e, i) => <td key={`${index}${i}`} ></td>)}
-                            </tr>
-                        );
-                    })
-                }
-                {
-                    props.rooms.map((room, index) => {
-                        return (
-                            <tr key={room + 'Col'}>
-                                <th className='row-header'>{room}</th>
-                                {props.weapons.map((w,i) => <td key={index + i + 'row2'} ></td>)}
+                                {props.weapons.map((e, i) => <Cell key={`${index}${i}`}/>)}
+                                {props.rooms.map((e, i) => <Cell key={`${index}${i}`}/>)}
                             </tr>
                         );
                     })
